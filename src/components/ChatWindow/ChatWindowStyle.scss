@@ -1,0 +1,241 @@
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f4f4f9;
+  border-left: 1px solid #e1e1e1;
+  position: relative;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  background-color: #c6c6c6;
+  color: #000;
+  padding: 15px;
+  border-bottom: 1px solid #7c7c7c;
+}
+
+.chat-header-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.chat-header-avatar img, .default-avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.default-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffc8a5;
+  color: #fff;
+  font-size: 1.5em;
+  border-radius: 50%;
+}
+
+.chat-header-name {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: flex-start;
+}
+
+.message.me {
+  justify-content: flex-end;
+}
+
+.message.them {
+  justify-content: flex-start;
+}
+
+.message-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.message-avatar {
+  width: 40px; // Adjust the size to your preference
+  height: 40px; // Ensure avatars are square
+  border-radius: 50%; // Make the avatar circular
+  overflow: hidden; // Ensures the image stays within the circular boundary
+  display: flex; // Flex display to center the icon if no image is used
+  align-items: center; // Center icon vertically
+  justify-content: center; // Center icon horizontally
+  background-color: #ffc8a5; // Light grey background for default avatars
+  margin-right: 10px; // Space between the avatar and the message bubble
+  img {
+    width: 100%; // Avatar image should fill the container
+    height: 100%; // Avatar image should fill the container
+    object-fit: cover; // Ensure the image covers the space without distortion
+  }
+  svg {
+    width: 60%; // Adjust the size of the fallback icon
+    height: 60%; // Ensuring icon fits nicely within the circular avatar
+    color: #fff; // Light grey color for the icon
+  }
+}
+
+.message-bubble {
+  background: #e9ecef;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 70%;
+  position: relative;
+}
+
+.message-bubble:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+}
+
+.message-bubble.me {
+  background: #007bff;
+  color: #fff;
+}
+
+.message-bubble.me:before {
+  right: -10px;
+  border-left: 10px solid #007bff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.message-bubble.them:before {
+  left: -10px;
+  border-right: 10px solid #e9ecef;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.message-text {
+  font-size: 1em;
+}
+
+.message-time {
+  font-size: 0.75em;
+  color: #666;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-top: 1px solid #e1e1e1;
+  background-color: #ffffff;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.message-input input:focus {
+  border-color: #007bff;
+}
+
+.message-input button {
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.message-input button:hover {
+  background: #0056b3;
+}
+
+.no-chat-selected {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #666;
+  font-size: 1.25em;
+}
+
+.toast {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #007bff;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.toast button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.25em;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.toast button:hover {
+  color: #ccc;
+}
+.edit-button {
+  background-color: #f0f0f0;  /* Light gray background for neutral look */
+  color: #333;  /* Darker text color for readability */
+  border: none;  /* Light border for subtle outline */
+  border-radius: 5px;  /* Rounded corners for a modern look */
+  padding: 3px 4px;  /* Padding for comfortable click area */
+  font-size: 12px;  /* Font size for consistency with other text */
+  cursor: pointer;  /* Pointer cursor to indicate clickable */
+  transition: background-color 0.3s, color 0.3s;  /* Smooth transitions for hover effects */
+
+  &:hover {
+    background-color: #e0e0e0;  /* Slightly darker background on hover */
+    color: #000;  /* Change text color on hover for contrast */
+  }
+
+  &:active {
+    background-color: #d0d0d0;  /* Even darker background on active/click */
+  }
+
+  &:focus {
+    outline: none;  /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);  /* Custom focus outline for accessibility */
+  }
+}

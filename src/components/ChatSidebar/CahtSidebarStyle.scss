@@ -1,0 +1,86 @@
+.sidebar{
+    padding: 0 10px;
+    width: 33.3%;
+    position: relative;
+    &__wrapper-create{
+        display: flex;
+        align-items: center;
+
+    }
+    &__wrapper-title{
+        font-size: 18px;
+        color: #46bdb7;
+    }
+    &__create-chat{
+        margin: 0 0 0 auto;
+        &--btn{
+            cursor: pointer;
+            background-color: #46bdb7;
+            border:none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 5px;
+        }
+    }
+}
+
+.chats{
+    &__link{
+        display: flex;
+        margin-right: auto;
+    }
+    &__item{
+       display: flex;
+       border-bottom: 1px solid #616161;
+       padding: 10px 0;
+    }
+    &__btn{
+        cursor: pointer;
+        border-radius: 5px;
+        border: none;
+        background-color: rgb(103, 131, 25);
+        &:hover{
+            background-color: rgb(218, 121, 2);
+            transition: all 0.3s ease;
+        }
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+    &__name{
+        font-size: 18px;
+        font-weight: 500;
+        color: #040075;
+    }
+    &__last-message{
+        font-size: 12px;
+        font-weight: 400;
+        color: #656565;
+    }
+}
+
+.chat-avatar{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 211, 156);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0 15px 0 0;
+}
+.edit{
+    &:hover{
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+}
+.delet{
+    &:hover{
+        background-color: #6c0220;
+        color: #fff;
+        transition: all 0.3s ease;
+    }
+}
