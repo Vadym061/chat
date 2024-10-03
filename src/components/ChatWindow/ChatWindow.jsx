@@ -4,7 +4,7 @@ import Toast from '../Toast/Toast';
 import './ChatWindowStyle.scss';
 import { PiFinnTheHumanFill } from "react-icons/pi";
 
-function ChatWindow({ selectedChat, selectedChatId, setChats, chats }) {
+function ChatWindow({ selectedChat, selectedChatId, setChats, chats, onBack }) {
   const [messages, setMessages] = useState(selectedChat ? selectedChat.messages : []);
   const [ws, setWs] = useState(null);
   const [toastMessage, setToastMessage] = useState('');
@@ -136,9 +136,10 @@ function ChatWindow({ selectedChat, selectedChatId, setChats, chats }) {
 
   return (
     <div className='chat-window'>
-      {selectedChat ? (
+      {selectedChat && (
         <>
           <div className='chat-header'>
+          <button className='back-button' onClick={onBack}>До чату</button>
             <div className='chat-header-avatar'>
               {selectedChat.avatar ? (
                 <img src={selectedChat.avatar} alt={`${selectedChat.firstName} ${selectedChat.lastName}`} />
@@ -188,10 +189,8 @@ function ChatWindow({ selectedChat, selectedChatId, setChats, chats }) {
             {isRandomMessagesEnabled ? 'Вимкнути автоматичні повідомлення' : 'Увімкнути автоматичні повідомлення'}
           </button>
         </>
-      ) : (
-        <div className='no-chat-selected'>Виберіть чат, щоб почати листування</div>
       )}
-
+     
       {toastMessage && <Toast message={toastMessage} onClose={closeToast} />}
     </div>
   );

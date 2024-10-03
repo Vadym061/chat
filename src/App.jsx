@@ -11,6 +11,7 @@ const App = () => {
   const [selectedChatId, setSelectedChatId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [chatToDelete, setChatToDelete] = useState(null);
+  const [isChatWindowVisible, setIsChatWindowVisible] = useState(false);
 
   useEffect(() => {
     async function fetchChats() {
@@ -30,6 +31,7 @@ const App = () => {
 
   const handleSelectChat = (chatId) => {
     setSelectedChatId(chatId);
+    setIsChatWindowVisible(true); 
   };
 
   const handleCreateChat = async (newChat) => {
@@ -95,10 +97,16 @@ const App = () => {
     }
   };
 
+  const handleBackToChats = () => {
+    setSelectedChatId(null);
+    setIsChatWindowVisible(false); 
+  };
+
   return (
     <BrowserRouter>
       <div className='app'>
         <div className='app__section'>
+        {isChatWindowVisible ? null : (
           <ChatSidebar 
             chats={chats} 
             onSelectChat={handleSelectChat} 
@@ -106,12 +114,18 @@ const App = () => {
             onUpdateChat={handleUpdateChat} 
             onDeleteChat={handleDeleteChat} 
           />
+        )}
+
+        {/* Chat Window */}
+        {isChatWindowVisible && (
           <ChatWindow 
             selectedChat={selectedChat} 
             selectedChatId={selectedChatId} 
             setChats={setChats} 
             chats={chats} 
+            onBack={handleBackToChats}
           />
+        )}
         </div>
         <ConfirmationModal
           isOpen={isModalOpen}

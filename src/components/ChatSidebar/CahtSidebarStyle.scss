@@ -2,6 +2,9 @@
     padding: 0 10px;
     width: 33.3%;
     position: relative;
+    @media (max-width: 920px) {
+       width: 100%;
+      }
     &__wrapper-create{
         display: flex;
         align-items: center;
