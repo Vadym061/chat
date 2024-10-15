@@ -15,24 +15,24 @@ function EditChatDialog({ isOpen, onClose, onUpdateChat, chat }) {
     return (
         <div className="edit-chat-dialog-overlay" onClick={onClose}>
             <div className="edit-chat-dialog" onClick={(e) => e.stopPropagation()}>
-                <h2 className="edit-chat-dialog__title">Редагувати чат</h2>
+                <h2 className="edit-chat-dialog__title">Edit chat</h2>
                 <input 
                     type="text" 
                     className="edit-chat-dialog__input" 
                     value={firstName} 
                     onChange={(e) => setFirstName(e.target.value)} 
-                    placeholder="Ім'я"
+                    placeholder="First Name"
                 />
                 <input 
                     type="text" 
                     className="edit-chat-dialog__input" 
                     value={lastName} 
                     onChange={(e) => setLastName(e.target.value)} 
-                    placeholder="Прізвище"
+                    placeholder="Last Name"
                 />
                 <div className="edit-chat-dialog__actions">
-                    <button className="edit-chat-dialog__button save" onClick={handleUpdate}>Зберегти</button>
-                    <button className="edit-chat-dialog__button cancel" onClick={onClose}>Скасувати</button>
+                    <button className="edit-chat-dialog__button save" onClick={handleUpdate}>Save</button>
+                    <button className="edit-chat-dialog__button cancel" onClick={onClose}>Cancel</button>
                 </div>
             </div>
         </div>

@@ -75,14 +75,16 @@
     margin: 0 15px 0 0;
 }
 .edit{
+    height: 20px;
     &:hover{
         color: #fff;
         transition: all 0.3s ease;
     }
 }
 .delet{
+    height: 20px;
     &:hover{
-        background-color: #6c0220;
+        background-color: #f30000;
         color: #fff;
         transition: all 0.3s ease;
     }

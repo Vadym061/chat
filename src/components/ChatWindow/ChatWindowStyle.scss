@@ -76,24 +76,24 @@
 }
 
 .message-avatar {
-  width: 40px; // Adjust the size to your preference
-  height: 40px; // Ensure avatars are square
-  border-radius: 50%; // Make the avatar circular
-  overflow: hidden; // Ensures the image stays within the circular boundary
-  display: flex; // Flex display to center the icon if no image is used
-  align-items: center; // Center icon vertically
-  justify-content: center; // Center icon horizontally
-  background-color: #ffc8a5; // Light grey background for default avatars
-  margin-right: 10px; // Space between the avatar and the message bubble
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background-color: #ffc8a5; 
+  margin-right: 10px; 
   img {
-    width: 100%; // Avatar image should fill the container
-    height: 100%; // Avatar image should fill the container
-    object-fit: cover; // Ensure the image covers the space without distortion
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
   }
   svg {
-    width: 60%; // Adjust the size of the fallback icon
-    height: 60%; // Ensuring icon fits nicely within the circular avatar
-    color: #fff; // Light grey color for the icon
+    width: 60%;
+    height: 60%; 
+    color: #fff;
   }
 }
 
@@ -217,26 +217,36 @@
   color: #ccc;
 }
 .edit-button {
-  background-color: #f0f0f0;  /* Light gray background for neutral look */
-  color: #333;  /* Darker text color for readability */
-  border: none;  /* Light border for subtle outline */
-  border-radius: 5px;  /* Rounded corners for a modern look */
-  padding: 3px 4px;  /* Padding for comfortable click area */
-  font-size: 12px;  /* Font size for consistency with other text */
-  cursor: pointer;  /* Pointer cursor to indicate clickable */
-  transition: background-color 0.3s, color 0.3s;  /* Smooth transitions for hover effects */
+  background-color: #f0f0f0;  
+  color: #333; 
+  border: none; 
+  border-radius: 5px;  
+  padding: 3px 4px;  
+  font-size: 12px;  
+  cursor: pointer;  
+  transition: background-color 0.3s, color 0.3s;  
 
   &:hover {
-    background-color: #e0e0e0;  /* Slightly darker background on hover */
-    color: #000;  /* Change text color on hover for contrast */
+    background-color: #e0e0e0;  
+    color: #000;  
   }
 
   &:active {
-    background-color: #d0d0d0;  /* Even darker background on active/click */
+    background-color: #d0d0d0; 
   }
 
   &:focus {
-    outline: none;  /* Remove default focus outline */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);  /* Custom focus outline for accessibility */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);  
   }
+}
+
+.back-button{
+  margin-left: auto;
+  cursor: pointer;
+  background-color: #007bff;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  padding: 10px 10px;
 }

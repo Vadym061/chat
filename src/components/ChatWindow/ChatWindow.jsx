@@ -139,7 +139,7 @@ function ChatWindow({ selectedChat, selectedChatId, setChats, chats, onBack }) {
       {selectedChat && (
         <>
           <div className='chat-header'>
-          <button className='back-button' onClick={onBack}>До чату</button>
+          
             <div className='chat-header-avatar'>
               {selectedChat.avatar ? (
                 <img src={selectedChat.avatar} alt={`${selectedChat.firstName} ${selectedChat.lastName}`} />
@@ -148,6 +148,7 @@ function ChatWindow({ selectedChat, selectedChatId, setChats, chats, onBack }) {
               )}
             </div>
             <h2 className='chat-header-name'>{selectedChat.firstName} {selectedChat.lastName}</h2>
+            <button className='back-button' onClick={onBack}>Back</button>
           </div>
           <div className='chat-messages'>
             {messages.map((message, index) => (

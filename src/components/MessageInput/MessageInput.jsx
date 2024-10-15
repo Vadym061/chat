@@ -26,7 +26,7 @@ function MessageInput({ onSendMessage }) {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         onKeyPress={handleKeyPress}
-        placeholder="Введіть ваше повідомлення"
+        placeholder="Enter your message"
       />
       <button className="send-button" onClick={handleSendMessage}>
         <IoSendSharp />
